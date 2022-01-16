@@ -28,26 +28,34 @@
 </template>
 
 <script>
-import { defineComponent, ref } from "vue";
+import { useStore } from "vuex";
+import { defineComponent, ref, watch, computed } from "vue";
 import { useQuasar } from "quasar";
 
 export default defineComponent({
   name: "MainLayout",
-
   components: {},
 
   setup() {
-    //dark mode config
+    //configs
     const $q = useQuasar();
+
     $q.dark.set(true);
     const themeValue = ref(true);
+
+    watch(
+      () => $q.dark.isActive,
+      (val) => {
+        themeValue.value = val;
+      }
+    );
 
     return {
       themeValue,
       switchTheme() {
         $q.dark.toggle();
-        themeValue.value = !themeValue.value;
       },
+  
     };
   },
 });
