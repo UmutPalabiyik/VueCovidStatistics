@@ -1,6 +1,6 @@
 export default function () {
   return {
     summary: null,
-    isSummaryDataFetch: true
+    summaryDataFetchStatus: true,
   };
 }

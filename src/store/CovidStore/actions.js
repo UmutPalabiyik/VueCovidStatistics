@@ -10,5 +10,6 @@ export const updateCovidSummary = async ({ commit }) => {
   try {
     const response = await api(config);
     commit("updateCovidSummary", response);
+    commit("updateSummaryDataFetchStatus");
   } catch (error) {}
 };
