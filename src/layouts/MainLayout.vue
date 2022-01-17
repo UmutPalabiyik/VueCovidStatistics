@@ -1,10 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated class="bg-dark row justify-center">
-      <CountrySearchBar />
-    </q-header>
-
     <q-page-container>
+      <AppThemeComponent />
       <router-view />
     </q-page-container>
   </q-layout>
@@ -12,10 +9,10 @@
 
 <script>
 import { defineComponent } from "vue";
-import CountrySearchBar from "../components/CountrySearchBar.vue";
+import AppThemeComponent from "../components/AppThemeComponent.vue";
 
 export default defineComponent({
   name: "MainLayout",
-  components: { CountrySearchBar },
+  components: { AppThemeComponent },
 });
 </script>

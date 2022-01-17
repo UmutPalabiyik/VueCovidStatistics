@@ -1,5 +1,5 @@
 <template>
-  <q-toolbar class="col-6">
+  <q-toolbar class="col-4">
     <q-input
       v-model="inputValue"
       bottom-slots
@@ -15,41 +15,23 @@
         <q-icon name="close" class="cursor-pointer" />
       </template>
     </q-input>
-    <q-btn
-      round
-      color="dark"
-      :icon="themeValue ? 'eva-moon-outline' : 'eva-sun-outline'"
-      class="q-ml-md"
-      @click="switchTheme"
-    />
   </q-toolbar>
 </template>
 
 <script>
-import { useQuasar } from "quasar";
 import { defineComponent, ref, watch } from "vue";
 
 export default defineComponent({
   name: "CountrySearchBar",
-  setup() {
-    const $q = useQuasar();
-    const themeValue = ref(true);
+  emits: ["inputValue"],
+  setup(props, { emit }) {
     const inputValue = ref("");
-
-    $q.dark.set(true);
-    watch(
-      () => $q.dark.isActive,
-      (val) => {
-        themeValue.value = val;
-      }
-    );
+    watch(inputValue, (val) => {
+      emit("inputValue", val);
+    });
 
     return {
-      themeValue,
       inputValue,
-      switchTheme() {
-        $q.dark.toggle();
-      },
     };
   },
 });

@@ -28,7 +28,7 @@ import { useStore } from "vuex";
 import { defineComponent, computed, onMounted } from "vue";
 
 export default defineComponent({
-  name: "CovidDataSummaryComponent",
+  name: "CovidSummaryDataComponent",
   setup() {
     const store = useStore();
     onMounted(() => {

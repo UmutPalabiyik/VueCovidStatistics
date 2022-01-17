@@ -1,7 +1,7 @@
 export const summaries = (state) => {
-    return state.summary;
-}
+  return state.summary;
+};
 
 export const getSummaryDataFetchStatus = (state) => {
-    return state.summaryDataFetchStatus;
-}
+  return state.summaryDataFetchStatus;
+};
