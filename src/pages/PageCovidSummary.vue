@@ -1,6 +1,6 @@
 <template>
   <q-header elevated class="bg-dark row justify-center">
-    <CountrySearchBar @inputValue="inputChange" />
+    <CountrySearchBar />
   </q-header>
 
   <q-page class="flex flex-center" dark>
@@ -18,13 +18,7 @@ export default defineComponent({
   name: "PageIndex",
   components: { CovidSummaryDataComponent, CountrySearchBar },
   setup() {
-    const inputChange = (val) => {
-      console.log("bla bla", val);
-    };
-
-    return {
-      inputChange,
-    };
+    return {};
   },
 });
 </script>

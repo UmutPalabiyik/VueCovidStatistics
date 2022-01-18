@@ -20,14 +20,15 @@
 
 <script>
 import { defineComponent, ref, watch } from "vue";
+import { useStore } from "vuex";
 
 export default defineComponent({
   name: "CountrySearchBar",
-  emits: ["inputValue"],
-  setup(props, { emit }) {
+  setup() {
+    const store = useStore();
     const inputValue = ref("");
     watch(inputValue, (val) => {
-      emit("inputValue", val);
+      store.dispatch("CountrySearchBarStore/updateSearchBarValue", val);
     });
 
     return {

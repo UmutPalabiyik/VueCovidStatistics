@@ -3,6 +3,7 @@ import { createStore } from "vuex";
 
 // import example from './module-example'
 import CovidStore from "./CovidStore";
+import CountrySearchBarStore from "./CountrySearchBarStore";
 
 /*
  * If not building with SSR mode, you can
@@ -17,6 +18,7 @@ export default store(function (/* { ssrContext } */) {
   const Store = createStore({
     modules: {
       CovidStore,
+      CountrySearchBarStore,
     },
 
     // enable strict mode (adds overhead!)
