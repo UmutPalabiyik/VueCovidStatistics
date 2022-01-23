@@ -9,17 +9,9 @@
   </q-page>
 </template>
 
-<script>
-import { defineComponent } from "vue";
-
+<script setup>
 import CovidSummaryDataComponent from "../components/CovidSummaryDataComponent.vue";
 import CountrySearchBar from "../components/CountrySearchBar.vue";
 
-export default defineComponent({
-  name: "PageIndex",
-  components: { CovidSummaryDataComponent, CountrySearchBar },
-  setup() {
-    return {};
-  },
-});
+
 </script>

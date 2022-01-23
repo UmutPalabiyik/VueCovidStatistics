@@ -18,22 +18,13 @@
   </q-toolbar>
 </template>
 
-<script>
-import { defineComponent, ref, watch } from "vue";
+<script setup>
+import { ref, watch } from "vue";
 import { useStore } from "vuex";
 
-export default defineComponent({
-  name: "CountrySearchBar",
-  setup() {
-    const store = useStore();
-    const inputValue = ref("");
-    watch(inputValue, (val) => {
-      store.dispatch("CountrySearchBarStore/updateSearchBarValue", val);
-    });
-
-    return {
-      inputValue,
-    };
-  },
+const store = useStore();
+const inputValue = ref("");
+watch(inputValue, (val) => {
+  store.dispatch("CountrySearchBarStore/updateSearchBarValue", val);
 });
 </script>

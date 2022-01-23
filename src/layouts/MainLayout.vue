@@ -7,12 +7,6 @@
   </q-layout>
 </template>
 
-<script>
-import { defineComponent } from "vue";
+<script setup>
 import AppThemeComponent from "../components/AppThemeComponent.vue";
-
-export default defineComponent({
-  name: "MainLayout",
-  components: { AppThemeComponent },
-});
 </script>
